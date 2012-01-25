@@ -33,6 +33,12 @@ syntax match   pymolIdentifier  "[A-Za-z_][A-Za-z_.0-9()]*"
 syntax match   pymolPunctuation "[(),]"
 syntax match   pymolRun         "^\(@\|run \) *[^;]\+"
 
+syn include @python syntax/python.vim
+unlet b:current_syntax
+
+syn region     pymolPython      matchgroup=pymolCommand start=+^python$+ end=+^python end$+ contains=@python
+syn match      pymolPython      "^/.*" contains=@python
+
 hi def link    pymolCommand     Statement
 hi def link    pymolIdentifier  Symbol
 hi def link    pymolOperator    Operator
