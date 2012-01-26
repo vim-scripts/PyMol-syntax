@@ -32,6 +32,7 @@ syntax cluster pymolString      contains=pymolString1,pymolString2
 syntax match   pymolIdentifier  "[A-Za-z_][A-Za-z_.0-9()]*"
 syntax match   pymolPunctuation "[(),]"
 syntax match   pymolRun         "^\(@\|run \) *[^;]\+"
+syntax match   pymolKwArg       "\<\w\+="
 
 syn include @python syntax/python.vim
 unlet b:current_syntax
@@ -48,6 +49,7 @@ hi def link    pymolSelector    Function
 hi def link    pymolPunctuation SpecialChar
 hi def link    pymolSetting     Identifier
 hi def link    pymolRun         Include
+hi def link    pymolKwArg       Operator
 
 let b:current_syntax = "pymol"
 
