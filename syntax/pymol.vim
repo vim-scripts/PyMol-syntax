@@ -20,34 +20,37 @@ syntax keyword pymolCommand
   \ alias
   \ align
   \ alignto
+  \ alphatoall
   \ alter
   \ alter_state
   \ angle
+  \ api
   \ as
   \ assert
   \ attach
   \ backward
   \ bg_color
   \ bond
-  \ break
   \ button
   \ cache
+  \ callout
   \ capture
   \ cartoon
   \ cd
   \ cealign
   \ center
+  \ centerofmass
   \ check
   \ class
   \ clean
   \ clip
   \ cls
   \ color
-  \ commands
   \ config_mouse
-  \ continue
   \ copy
+  \ copy_to
   \ count_atoms
+  \ count_discrete
   \ count_frames
   \ count_states
   \ create
@@ -57,6 +60,7 @@ syntax keyword pymolCommand
   \ del
   \ delete
   \ deprotect
+  \ desaturate
   \ deselect
   \ dihedral
   \ dir
@@ -65,28 +69,23 @@ syntax keyword pymolCommand
   \ drag
   \ draw
   \ dss
-  \ dummy
   \ dump
   \ edit
   \ edit_mode
-  \ elif
-  \ else
   \ embed
   \ enable
   \ ending
-  \ except
   \ exec
   \ export_dots
-  \ extend
+  \ extra_fit
   \ extract
   \ fab
-  \ fast_minimize
   \ feedback
   \ fetch
-  \ finally
   \ fit
   \ fix_chemistry
   \ flag
+  \ focal_blur
   \ for
   \ fork
   \ forward
@@ -97,11 +96,16 @@ syntax keyword pymolCommand
   \ get
   \ get_angle
   \ get_area
+  \ get_bond
   \ get_chains
   \ get_dihedral
   \ get_distance
   \ get_extent
   \ get_position
+  \ get_property
+  \ get_property_list
+  \ get_renderer
+  \ get_sasa_relative
   \ get_symmetry
   \ get_title
   \ get_type
@@ -115,6 +119,7 @@ syntax keyword pymolCommand
   \ h_fill
   \ h_fix
   \ help
+  \ help_setting
   \ hide
   \ id_atom
   \ identify
@@ -132,11 +137,14 @@ syntax keyword pymolCommand
   \ isosurface
   \ iterate
   \ iterate_state
+  \ join_states
   \ label
   \ load
   \ load_embedded
+  \ load_mtz
   \ load_png
   \ load_traj
+  \ loadall
   \ log
   \ log_close
   \ log_open
@@ -160,10 +168,10 @@ syntax keyword pymolCommand
   \ mem
   \ meter_reset
   \ middle
-  \ minimize
   \ minsert
   \ mmatrix
   \ mmove
+  \ morph
   \ mouse
   \ move
   \ movie.load
@@ -178,7 +186,7 @@ syntax keyword pymolCommand
   \ movie.zoom
   \ mplay
   \ mpng
-  \ mray
+  \ mse2met
   \ mset
   \ mstop
   \ mtoggle
@@ -195,11 +203,11 @@ syntax keyword pymolCommand
   \ pop
   \ protect
   \ pseudoatom
-  \ push_undo
   \ pwd
   \ quit
   \ raise
   \ ramp_new
+  \ ramp_update
   \ ray
   \ rebuild
   \ recolor
@@ -215,7 +223,6 @@ syntax keyword pymolCommand
   \ replace_wizard
   \ reset
   \ resume
-  \ return
   \ rewind
   \ rms
   \ rms_cur
@@ -230,12 +237,14 @@ syntax keyword pymolCommand
   \ sculpt_purge
   \ select
   \ set
+  \ set_atom_property
   \ set_bond
   \ set_color
   \ set_dihedral
   \ set_geometry
   \ set_key
   \ set_name
+  \ set_property
   \ set_symmetry
   \ set_title
   \ set_view
@@ -248,12 +257,13 @@ syntax keyword pymolCommand
   \ spectrum
   \ spheroid
   \ splash
+  \ split_chains
   \ split_states
   \ stereo
   \ super
   \ symexp
+  \ symmetry_copy
   \ system
-  \ test
   \ toggle
   \ torsion
   \ translate
@@ -262,10 +272,12 @@ syntax keyword pymolCommand
   \ unbond
   \ undo
   \ ungroup
+  \ uniquify
   \ unmask
   \ unpick
   \ unset
   \ unset_bond
+  \ unset_deep
   \ update
   \ util.cbab
   \ util.cbac
@@ -280,7 +292,6 @@ syntax keyword pymolCommand
   \ util.cbc
   \ util.chainbow
   \ util.cnc
-  \ util.colors
   \ util.rainbow
   \ util.ss
   \ valence
@@ -289,6 +300,8 @@ syntax keyword pymolCommand
   \ viewport
   \ volume
   \ volume_color
+  \ volume_panel
+  \ volume_ramp_new
   \ while
   \ window
   \ wizard
@@ -297,20 +310,28 @@ syntax keyword pymolCommand
 " PyMOL> print('\n  \\ '.join(sorted(set(cmd.setting.name_list).difference(cmd.kw_list))))
 syntax keyword pymolSetting
   \ active_selections
+  \ alignment_as_cylinders
   \ all_states
   \ ambient
+  \ ambient_occlusion_mode
+  \ ambient_occlusion_scale
+  \ ambient_occlusion_smooth
+  \ anaglyph_mode
   \ angle_color
   \ angle_label_position
   \ angle_size
   \ animation
   \ animation_duration
   \ antialias
+  \ antialias_shader
+  \ assembly
   \ async_builds
   \ ati_bugs
   \ atom_name_wildcard
   \ atom_type_format
   \ auto_classify_atoms
   \ auto_color
+  \ auto_color_next
   \ auto_copy_images
   \ auto_defer_atom_count
   \ auto_defer_builds
@@ -322,6 +343,7 @@ syntax keyword pymolSetting
   \ auto_remove_hydrogens
   \ auto_rename_duplicate_objects
   \ auto_sculpt
+  \ auto_show_classified
   \ auto_show_lines
   \ auto_show_nonbonded
   \ auto_show_selections
@@ -331,10 +353,13 @@ syntax keyword pymolSetting
   \ backface_cull
   \ batch_prefix
   \ bg_gradient
+  \ bg_image_filename
+  \ bg_image_linear
+  \ bg_image_mode
+  \ bg_image_tilesize
   \ bg_rgb
   \ bg_rgb_bottom
   \ bg_rgb_top
-  \ bonding_vdw_cutoff
   \ button_mode
   \ button_mode_name
   \ cache_display
@@ -342,6 +367,7 @@ syntax keyword pymolSetting
   \ cache_max
   \ cache_memory
   \ cache_mode
+  \ cartoon_all_alt
   \ cartoon_color
   \ cartoon_cylindrical_helices
   \ cartoon_debug
@@ -353,6 +379,7 @@ syntax keyword pymolSetting
   \ cartoon_fancy_sheets
   \ cartoon_flat_cycles
   \ cartoon_flat_sheets
+  \ cartoon_gap_cutoff
   \ cartoon_helix_radius
   \ cartoon_highlight_color
   \ cartoon_ladder_color
@@ -361,6 +388,7 @@ syntax keyword pymolSetting
   \ cartoon_loop_cap
   \ cartoon_loop_quality
   \ cartoon_loop_radius
+  \ cartoon_nucleic_acid_as_cylinders
   \ cartoon_nucleic_acid_color
   \ cartoon_nucleic_acid_mode
   \ cartoon_oval_length
@@ -401,16 +429,28 @@ syntax keyword pymolSetting
   \ cartoon_tube_radius
   \ cartoon_use_shader
   \ cavity_cull
+  \ cgo_debug
   \ cgo_dot_radius
   \ cgo_dot_width
   \ cgo_ellipsoid_quality
+  \ cgo_lighting
   \ cgo_line_radius
   \ cgo_line_width
   \ cgo_ray_width_scale
+  \ cgo_shader_ub_color
+  \ cgo_shader_ub_flags
+  \ cgo_shader_ub_normal
   \ cgo_sphere_quality
   \ cgo_transparency
+  \ cgo_use_shader
+  \ chromadepth
+  \ cif_keepinmemory
+  \ cif_use_auth
   \ clamp_colors
   \ clean_electro_mode
+  \ collada_background_box
+  \ collada_export_lighting
+  \ collada_geometry_mode
   \ cone_quality
   \ connect_bonded
   \ connect_cutoff
@@ -418,12 +458,14 @@ syntax keyword pymolSetting
   \ coulomb_cutoff
   \ coulomb_dielectric
   \ coulomb_units_factor
-  \ cull_spheres
+  \ dash_as_cylinders
   \ dash_color
   \ dash_gap
   \ dash_length
   \ dash_radius
   \ dash_round_ends
+  \ dash_transparency
+  \ dash_use_shader
   \ dash_width
   \ debug_pick
   \ default_2fofc_map_rep
@@ -439,8 +481,10 @@ syntax keyword pymolSetting
   \ dihedral_label_position
   \ dihedral_size
   \ direct
+  \ display_scale_factor
   \ dist_counter
   \ distance_exclusion
+  \ dot_as_spheres
   \ dot_color
   \ dot_density
   \ dot_hydrogens
@@ -449,6 +493,7 @@ syntax keyword pymolSetting
   \ dot_normals
   \ dot_radius
   \ dot_solvent
+  \ dot_use_shader
   \ dot_width
   \ draw_frames
   \ draw_mode
@@ -457,7 +502,9 @@ syntax keyword pymolSetting
   \ dynamic_width_factor
   \ dynamic_width_max
   \ dynamic_width_min
+  \ edit_light
   \ editor_auto_dihedral
+  \ editor_auto_measure
   \ editor_auto_origin
   \ editor_bond_cycle_mode
   \ editor_label_fragments
@@ -469,6 +516,7 @@ syntax keyword pymolSetting
   \ fast_idle
   \ fetch_host
   \ fetch_path
+  \ fetch_type_default
   \ field_of_view
   \ fit_iterations
   \ fit_kabsch
@@ -481,7 +529,6 @@ syntax keyword pymolSetting
   \ gaussian_b_floor
   \ gaussian_resolution
   \ geometry_export_mode
-  \ gl_ambient
   \ gradient_max_length
   \ gradient_min_length
   \ gradient_min_slope
@@ -510,6 +557,7 @@ syntax keyword pymolSetting
   \ hide_underscore_names
   \ idle_delay
   \ ignore_case
+  \ ignore_case_chain
   \ ignore_pdb_segi
   \ image_copy_always
   \ image_dots_per_inch
@@ -523,17 +571,31 @@ syntax keyword pymolSetting
   \ keep_alive
   \ label_anchor
   \ label_angle_digits
+  \ label_bg_color
+  \ label_bg_outline
+  \ label_bg_transparency
   \ label_color
+  \ label_connector
+  \ label_connector_color
+  \ label_connector_ext_length
+  \ label_connector_mode
+  \ label_connector_width
   \ label_digits
   \ label_dihedral_digits
   \ label_distance_digits
   \ label_font_id
+  \ label_multiline_justification
+  \ label_multiline_spacing
   \ label_outline_color
+  \ label_padding
+  \ label_placement_offset
   \ label_position
+  \ label_relative_mode
+  \ label_screen_point
   \ label_shadow_mode
   \ label_size
+  \ label_z_target
   \ legacy_mouse_zoom
-  \ legacy_vdw_radii
   \ light
   \ light2
   \ light3
@@ -544,20 +606,23 @@ syntax keyword pymolSetting
   \ light8
   \ light9
   \ light_count
+  \ line_as_cylinders
   \ line_color
   \ line_radius
   \ line_smooth
   \ line_stick_helper
   \ line_use_shader
   \ line_width
+  \ load_atom_props_default
+  \ load_object_props_default
   \ log_box_selections
   \ log_conformations
   \ logging
   \ map_auto_expand_sym
   \ matrix_mode
   \ max_threads
-  \ max_triangles
   \ max_ups
+  \ mesh_as_cylinders
   \ mesh_carve_cutoff
   \ mesh_carve_selection
   \ mesh_carve_state
@@ -577,6 +642,7 @@ syntax keyword pymolSetting
   \ mesh_skip
   \ mesh_solvent
   \ mesh_type
+  \ mesh_use_shader
   \ mesh_width
   \ min_mesh_spacing
   \ moe_separate_chains
@@ -603,10 +669,15 @@ syntax keyword pymolSetting
   \ movie_quality
   \ movie_rock
   \ multiplex
+  \ nb_spheres_quality
+  \ nb_spheres_size
+  \ nb_spheres_use_shader
   \ neighbor_cutoff
   \ no_idle
+  \ nonbonded_as_cylinders
   \ nonbonded_size
   \ nonbonded_transparency
+  \ nonbonded_use_shader
   \ normal_workaround
   \ normalize_ccp4_maps
   \ normalize_grd_maps
@@ -617,6 +688,7 @@ syntax keyword pymolSetting
   \ overlay
   \ overlay_lines
   \ pdb_conect_all
+  \ pdb_conect_nodup
   \ pdb_discrete_chains
   \ pdb_echo_tags
   \ pdb_formal_charges
@@ -634,17 +706,24 @@ syntax keyword pymolSetting
   \ pdb_truncate_residue_name
   \ pdb_unbond_cations
   \ pdb_use_ter_records
+  \ pick32bit
+  \ pick_labels
+  \ pick_shading
+  \ pick_surface
   \ pickable
   \ png_file_gamma
   \ png_screen_gamma
   \ polar_neighbor_cutoff
   \ power
   \ pqr_no_chain_id
+  \ precomputed_lighting
   \ presentation
   \ presentation_auto_quit
   \ presentation_auto_start
   \ presentation_mode
   \ preserve_chempy_ids
+  \ pse_binary_dump
+  \ pse_export_version
   \ pymol_space_max_blue
   \ pymol_space_max_green
   \ pymol_space_max_red
@@ -668,6 +747,7 @@ syntax keyword pymolSetting
   \ ray_interior_reflect
   \ ray_interior_shadows
   \ ray_interior_texture
+  \ ray_label_connector_flat
   \ ray_label_specular
   \ ray_legacy_lighting
   \ ray_max_passes
@@ -680,7 +760,6 @@ syntax keyword pymolSetting
   \ ray_shadow_decay_factor
   \ ray_shadow_decay_range
   \ ray_shadow_fudge
-  \ ray_shadows
   \ ray_spec_local
   \ ray_texture
   \ ray_texture_settings
@@ -705,7 +784,9 @@ syntax keyword pymolSetting
   \ ray_volume
   \ reflect
   \ reflect_power
+  \ render_as_cylinders
   \ retain_order
+  \ ribbon_as_cylinders
   \ ribbon_color
   \ ribbon_nucleic_acid_mode
   \ ribbon_power
@@ -713,10 +794,10 @@ syntax keyword pymolSetting
   \ ribbon_radius
   \ ribbon_sampling
   \ ribbon_side_chain_helper
-  \ ribbon_smooth
   \ ribbon_throw
   \ ribbon_trace_atoms
   \ ribbon_transparency
+  \ ribbon_use_shader
   \ ribbon_width
   \ robust_logs
   \ rock_delay
@@ -748,7 +829,6 @@ syntax keyword pymolSetting
   \ scene_animation
   \ scene_animation_duration
   \ scene_buttons
-  \ scene_buttons_mode
   \ scene_current_name
   \ scene_frame_mode
   \ scene_loop
@@ -823,15 +903,15 @@ syntax keyword pymolSetting
   \ session_cache_optimize
   \ session_changed
   \ session_compression
+  \ session_embeds_data
   \ session_file
   \ session_migration
   \ session_version_check
-  \ shader_path
+  \ shaders_from_disk
   \ shininess
   \ show_alpha_checker
   \ show_frame_rate
   \ show_progress
-  \ simplify_display_lists
   \ single_image
   \ slice_dynamic_grid
   \ slice_dynamic_grid_resolution
@@ -841,6 +921,7 @@ syntax keyword pymolSetting
   \ slice_track_camera
   \ slow_idle
   \ smooth_color_triangle
+  \ smooth_half_bonds
   \ solvent_radius
   \ spec_count
   \ spec_direct
@@ -881,16 +962,20 @@ syntax keyword pymolSetting
   \ stereo_dynamic_strength
   \ stereo_mode
   \ stereo_shift
+  \ stick_as_cylinders
   \ stick_ball
   \ stick_ball_color
   \ stick_ball_ratio
   \ stick_color
+  \ stick_debug
   \ stick_fixed_radius
+  \ stick_good_geometry
   \ stick_h_scale
   \ stick_nub
   \ stick_overlap
   \ stick_quality
   \ stick_radius
+  \ stick_round_nub
   \ stick_transparency
   \ stick_use_shader
   \ stick_valence_scale
@@ -909,6 +994,8 @@ syntax keyword pymolSetting
   \ surface_clear_selection
   \ surface_clear_state
   \ surface_color
+  \ surface_color_smoothing
+  \ surface_color_smoothing_threshold
   \ surface_debug
   \ surface_miserable
   \ surface_mode
@@ -921,11 +1008,15 @@ syntax keyword pymolSetting
   \ surface_quality
   \ surface_ramp_above_mode
   \ surface_residue_cutoff
+  \ surface_smooth_edges
   \ surface_solvent
   \ surface_trim_cutoff
   \ surface_trim_factor
   \ surface_type
   \ surface_use_shader
+  \ suspend_deferred
+  \ suspend_undo
+  \ suspend_undo_atom_count
   \ suspend_updates
   \ swap_dsn6_bytes
   \ sweep_angle
@@ -935,25 +1026,27 @@ syntax keyword pymolSetting
   \ test1
   \ test2
   \ text
-  \ texture_fonts
   \ trace_atoms_mode
   \ transparency
   \ transparency_global_sort
   \ transparency_mode
   \ transparency_picking_mode
   \ triangle_max_passes
+  \ trilines
   \ trim_dots
   \ two_sided_lighting
-  \ use_display_lists
+  \ use_geometry_shaders
   \ use_shaders
-  \ valence_default
   \ valence_mode
   \ valence_size
+  \ valence_zero_mode
+  \ valence_zero_scale
   \ validate_object_names
   \ virtual_trackball
   \ volume_bit_depth
   \ volume_data_range
   \ volume_layers
+  \ volume_mode
   \ wildcard
   \ wizard_prompt_mode
   \ wrap_output
@@ -961,8 +1054,15 @@ syntax keyword pymolSetting
 syntax match   pymolOperator1   "[!|&,()?]"
 syntax match   pymolOperator2   "([|aew].)|(b[rfmso].)|(nbr.)|([?][?][?])"
 syntax keyword pymolOperatorK   and or not in gap around within of byres bymolecule byfragment bysegment byobject bycell neighbor extend
+  \ first last like bychain bycalpha bound_to expand near_to beyond
 syntax cluster pymolOperator    contains=pymolOperator1,pymolOperator2,pymolOperatorK
 syntax keyword pymolSelector    resi resn name alt chain segi flag numeric_type text_type id index ss b q formal_charge partial_charge
+  \ model rank elem rep color pepseq
+  \ all enabled visible bonded protected masked
+  \ organic inorganic solvent polymer guide hetatm hydrogens metals
+  \ backbone sidechain donors acceptors
+  \ center origin
+
 syntax match   pymolComment     "^#.*$"
 syntax match   pymolNumber      "*[0-9](.[0-9])?"
 syntax match   pymolString1     "'[^']*'"
